@@ -1,17 +1,17 @@
 
 I followed Eric Stubacks’s SOC lab guide to:
--	Create an attacker VM (Ubuntu) & victim VM (Windows).
--	Disable Windows Defender on the victim machine.
--	Install Sysmon on victim machine.
--	Install Sliver Server on the attacker machine.
--	Create and deliver malicious payload to victim machine.
--	Create a Lima Charlie account and install a sensor on the victim machine.
--	Create my first detection and response rule and stop malicious activity.
+- Create an attacker VM (Ubuntu) & victim VM (Windows).
+- Disable Windows Defender on the victim machine.
+- Install Sysmon on victim machine.
+- Install Sliver Server on the attacker machine.
+- Create and deliver malicious payload to victim machine.
+- Create a Lima Charlie account and install a sensor on the victim machine.
+- Create my first detection and response rule and stop malicious activity.
 
 ## Preventing ransomware attack
 - The first rule I created was to prevent ransomware that uses the `vssadmin delete shadows /all`
     - Vssadmin is a default Windows process that controls volume shadow duplicates of the documents on a given PC. These shadow copies are regularly utilized as a recovery point, and they can be utilized to reestablish or return the file to a past state if they are destroyed or lost due to some reasons.
--	The first rule I created was the following:
+-	The rule is as follows:
 #### Detect
 ```
 event: NEW_PROCESS
@@ -36,10 +36,10 @@ rules:
     - deny_tree
     - <<routing/parent>>
 ```
-*	The rule is good for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
-*	To test this out I downloaded a ransomware simulator.
-    * It uses the following command to delete shadow copies:
--	If I run the ransomware executable and check detections in Lima Charlie, I can see that my rule was not triggered:
+- The rule is good for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
+- To test this out I downloaded a ransomware simulator.
+    - It uses the following command to delete shadow copies:
+- If I run the ransomware executable and check detections in Lima Charlie, I can see that my rule was not triggered:
 
 ## Using the Contains Operator
 -	I modified the rule to use the contains operator.

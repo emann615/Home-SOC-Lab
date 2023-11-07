@@ -9,8 +9,8 @@ I followed Eric Stubacks’s SOC lab guide to:
 -	Create my first detection and response rule and stop malicious activity.
 
 ## Preventing ransomware attack
-The first rule I created was to prevent ransomware that uses the `vssadmin delete shadows /all`
-- Vssadmin is a default Windows process that controls volume shadow duplicates of the documents on a given PC. These shadow copies are regularly utilized as a recovery point, and they can be utilized to reestablish or return the file to a past state if they are destroyed or lost due to some reasons.
+- The first rule I created was to prevent ransomware that uses the `vssadmin delete shadows /all`
+    - Vssadmin is a default Windows process that controls volume shadow duplicates of the documents on a given PC. These shadow copies are regularly utilized as a recovery point, and they can be utilized to reestablish or return the file to a past state if they are destroyed or lost due to some reasons.
 -	The first rule I created was the following:
 #### Detect
 ```

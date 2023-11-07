@@ -21,7 +21,7 @@ o	It uses the following command to delete shadow copies:
 
 ## Using the Contains Operator
 -	I modified the rule to use the contains operator.
-o	Now the rule will trigger for any command that include the values, “vssadmin”, “delete”, “shadows” and “/all”.
+o	Now the rule will trigger for any command that include the values “vssadmin”, “delete”, “shadows” and “/all”.
 -	When I ran the ransomware executable again, I could see that the rule was triggered in Lima Charlie and the attack was stopped.
 -	The rule did work, but it still leaves the victim machine open to other methods for deleting shadow copies that could be used by ransomware.
 -	To demonstrate this, I edited the source code of the ransomware to use a different method of deleting shadow copies.

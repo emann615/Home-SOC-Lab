@@ -32,4 +32,42 @@ o	Now the rule will trigger for any command that include the values â€œvssadminâ
 -	I wanted to see if I could make my rule robust to trigger for multiple different methods that could be used by ransomware to delete shadow copies.
 -	I modified the rule to include other methods that could be used to delete shadow copies.
 ```
+event: NEW_PROCESS
+op: and
+rules:
+  - case sensitive: false
+    op: matches
+    path: event/FILE_PATH
+    re: .*(vssadmin|wmic)\.exe$
+  - op: or
+    rules:
+      - op: and
+        rules:
+          - op: contains
+            path: event/COMMAND_LINE
+            value: delete
+          - op: contains
+            path: event/COMMAND_LINE
+            value: shadows
+          - op: contains
+            path: event/COMMAND_LINE
+            value: /all
+      - op: and
+        rules:
+          - op: contains
+            path: event/COMMAND_LINE
+            value: resize
+          - op: contains
+            path: event/COMMAND_LINE
+            value: shadowstorage
+      - op: and
+        rules:
+          - op: contains
+            path: event/COMMAND_LINE
+            value: shadowcopy
+          - op: contains
+            path: event/COMMAND_LINE
+            value: delete
+```
+  
 -	I ran the ransomware executable again and my rule was successfully triggered.

@@ -37,9 +37,8 @@ rules:
     - <<routing/parent>>
 ```
 - The rule is good for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
-- To test this out I downloaded a ransomware simulator.
-    - It uses the following command to delete shadow copies:
-- If I run the ransomware executable and check detections in Lima Charlie, I can see that my rule was not triggered:
+- To test this out I downloaded a ransomware simulator. It uses the command `vssadmin delete shadows /for=norealvolume /all /quiet` to delete shadow copies.
+- When I run the ransomware executable and check detections in Lima Charlie, I can see that my rule was not triggered.
 
 ## Using the Contains Operator
 -	I modified the rule to use the contains operator.

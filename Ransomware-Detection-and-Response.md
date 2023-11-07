@@ -14,7 +14,7 @@ o	Vssadmin is a default Windows process that controls volume shadow duplicates o
 -	The first rule I created was the following:
 #### Detect
 ```
-  event: NEW_PROCESS
+event: NEW_PROCESS
 op: and
 rules:
   - op: is
@@ -27,6 +27,15 @@ rules:
     path: routing/hostname
     value: desktop-jf9q90k.hsd1.tn.comcast.net
   ```
+#### Respond
+```
+- action: report
+  name: vss_deletion_kill_it
+- action: task
+  command:
+    - deny_tree
+    - <<routing/parent>>
+```
 -	The rule is good for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
 o	Ex:
 -	To test this out I downloaded a ransomware simulator.

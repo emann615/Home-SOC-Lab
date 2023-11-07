@@ -31,4 +31,5 @@ o	Now the rule will trigger for any command that include the values â€œvssadminâ
 ## Making the Rule More Robust
 -	I wanted to see if I could make my rule robust to trigger for multiple different methods that could be used by ransomware to delete shadow copies.
 -	I modified the rule to include other methods that could be used to delete shadow copies.
+```
 -	I ran the ransomware executable again and my rule was successfully triggered.

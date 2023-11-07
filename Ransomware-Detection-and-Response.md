@@ -37,7 +37,7 @@ rules:
     - <<routing/parent>>
 ```
 - The rule is good for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
-- To test this out I downloaded a ransomware simulator. It uses the command `vssadmin delete shadows /for=norealvolume /all /quiet` to delete shadow copies.
+- To test this out I downloaded a [ransomware simulator](https://github.com/NextronSystems/ransomware-simulator). It uses the command `vssadmin delete shadows /for=norealvolume /all /quiet` to delete shadow copies.
 - When I ran the ransomware executable, I could see that it was allowed to complete and encrypt my files.
 - When I checked the Detections tab in Lima Charlie, I could also see that my rule was not triggered.
 

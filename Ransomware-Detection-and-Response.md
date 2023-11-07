@@ -12,7 +12,21 @@ I followed Eric Stubacks’s SOC lab guide to:
 -	The first rule I created was to prevent ransomware that uses the `vssadmin delete shadows /all`
 o	Vssadmin is a default Windows process that controls volume shadow duplicates of the documents on a given PC. These shadow copies are regularly utilized as a recovery point, and they can be utilized to reestablish or return the file to a past state if they are destroyed or lost due to some reasons.
 -	The first rule I created was the following:
-o	
+**Detect**
+```
+  event: NEW_PROCESS
+op: and
+rules:
+  - op: is
+    path: event/FILE_PATH
+    value: C:\Windows\system32\vssadmin.exe
+  - op: is
+    path: event/COMMAND_LINE
+    value: '"C:\Windows\system32\vssadmin.exe" delete shadows /all'
+  - op: is
+    path: routing/hostname
+    value: desktop-jf9q90k.hsd1.tn.comcast.net
+  ```
 -	The rule is good for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
 o	Ex:
 -	To test this out I downloaded a ransomware simulator.

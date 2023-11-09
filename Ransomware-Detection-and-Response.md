@@ -46,7 +46,7 @@ rules:
 
 - When I checked the Detections tab in Lima Charlie, I could also see that my rule was not triggered.
 
-<img src="https://github.com/emann615/SOC-Lab/assets/117882385/b080d571-0819-402a-83a2-65ddb842dea1" height="80%" width="80%"/>
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/b080d571-0819-402a-83a2-65ddb842dea1" height="100%" width="100%"/>
 </br>
 </br>
 

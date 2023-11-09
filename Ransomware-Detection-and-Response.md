@@ -1,4 +1,27 @@
-## Setup
+
+# Ransomeware Detection and Response with Lima Charlie
+
+## Desciption
+
+In this lab, I ran through a scenario using Lima Charlie D&R rules to stop a ransomware attck.
+
+## Table of Contents
+
+   * [Languages and Utilities Used](#Languages-and-Utilities-Used)
+   * [Environments Used](#Environments-Used)
+   * [Project Summary](#Project-Summary)
+
+## Languages and Utilities Used
+
+* **Lima Charlie** 
+
+## Environments Used
+
+* **Windows 10 Pro**
+
+## Project Summary
+
+### Setup
 I followed [Eric Stubacks’s SOC lab guide](https://blog.ecapuano.com/p/so-you-want-to-be-a-soc-analyst-intro) to:
 - Create an attacker VM (Ubuntu) & victim VM (Windows).
 - Disable Windows Defender on the victim machine.
@@ -8,7 +31,7 @@ I followed [Eric Stubacks’s SOC lab guide](https://blog.ecapuano.com/p/so-you-
 - Create a Lima Charlie account and install a sensor on the victim machine.
 - Create my first detection and response rule to stop malicious activity.
 
-## Preventing ransomware attack
+### Preventing ransomware attack
 - I created a rule named **vss_deletion_kill_it** to prevent ransomware that uses the `vssadmin delete shadows /all`.
     - Vssadmin is a default Windows process that controls volume shadow duplicates of the documents on a given PC. These shadow copies are regularly utilized as a recovery point, and they can be utilized to reestablish or return the file to a past state if they are destroyed or lost due to some reasons. Ransomware programs use this process to prevent victims from being able to recover their files.
 -	The rule is as follows:
@@ -55,7 +78,7 @@ rules:
 </br>
 </br>
 
-## Using the Contains Operator
+### Using the Contains Operator
 -	I modified the detect part of the rule to use the contains operator.
 #### Detect
 ```
@@ -99,7 +122,7 @@ rules:
 </br>
 </br>
 
-## Making the Rule More Robust
+### Making the Rule More Robust
 - I wanted to see if I could make my rule robust to trigger for multiple different methods that could be used by ransomware to delete shadow copies.
 - I modified the detect part of rule to include other methods of deleting shadow copies.
 #### Detect

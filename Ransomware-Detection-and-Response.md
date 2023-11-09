@@ -29,7 +29,7 @@ I followed [Eric Stubacks’s SOC lab guide](https://blog.ecapuano.com/p/so-you-
 - Install Sliver Server on the attacker machine.
 - Create and deliver malicious payload to victim machine.
 - Create a Lima Charlie account and install a sensor on the victim machine.
-- Create my first detection and response rule to stop malicious activity.
+- Create my first detection and response rule in Lima Charlie to stop malicious activity.
 
 ### Preventing ransomware attack
 - I created a rule named **vss_deletion_kill_it** to prevent ransomware that uses the `vssadmin delete shadows /all`.

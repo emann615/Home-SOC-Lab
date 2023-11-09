@@ -3,7 +3,7 @@
 
 ## Desciption
 
-In this lab, I ran through a scenario using Lima Charlie D&R rules to stop a ransomware attck.
+In this lab, I ran through scenarios using Lima Charlie D&R rules to stop ransomware attacks.
 
 ## Table of Contents
 

@@ -72,6 +72,15 @@ rules:
 ```
 - This rule will trigger for any command that include the values “vssadmin”, “delete”, “shadows” and “/all”.
 - When I ran the ransomware executable again, I could see that the rule was triggered in Lima Charlie and the attack was stopped.
+
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/e96bac7d-e22e-45fc-bd86-f9d57a3a4d95" height="80%" width="80%"/>
+</br>
+</br>
+
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/29b2eded-0572-461c-b2c0-f40c35e54760" height="80%" width="80%"/>
+</br>
+</br>
+
 - The rule did work, but it still leaves my Windows VM open to other methods of deleting shadow copies that could be used by ransomware.
 - To demonstrate this, I edited the source code of the ransomware to use the command `vssadmin resize shadowstorage`.
 - I executed the ransomware again. This time the ransomware was able to complete its attack by resizing the shadowstorage and encrypting files on my Windows VM.
@@ -124,4 +133,3 @@ rules:
 <img src="" height="80%" width="80%"/>
 </br>
 </br>
-

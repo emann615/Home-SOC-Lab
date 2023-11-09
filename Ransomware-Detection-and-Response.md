@@ -142,7 +142,7 @@ rules:
             value: delete
 ```
   
--	I ran the ransomware executable again and my rule was successfully triggered stopping the attack.
+-	I ran the ransomware executable again and the **vss_deletion_kill_it** rule was successfully triggered stopping the attack.
 
 <img src="https://github.com/emann615/SOC-Lab/assets/117882385/cb8f3dbc-0f83-4121-a000-895abcc8aa7c" height="80%" width="80%"/>
 </br>

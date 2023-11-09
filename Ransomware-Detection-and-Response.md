@@ -73,7 +73,7 @@ rules:
 - This rule will trigger for any command that include the values “vssadmin”, “delete”, “shadows” and “/all”.
 - When I ran the ransomware executable again, I could see that the rule was triggered in Lima Charlie and the attack was stopped.
 
-<img src="https://github.com/emann615/SOC-Lab/assets/117882385/e96bac7d-e22e-45fc-bd86-f9d57a3a4d95" height="80%" width="80%"/>
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/e8dee409-7336-4673-8a9d-f104b06b38c3" height="100%" width="100%"/>
 </br>
 </br>
 

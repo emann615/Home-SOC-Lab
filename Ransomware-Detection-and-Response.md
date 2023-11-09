@@ -88,6 +88,11 @@ rules:
 
 - The rule did work, but it still leaves my Windows VM open to other methods of deleting shadow copies that could be used by ransomware.
 - To demonstrate this, I edited the source code of the ransomware to use the command `vssadmin resize shadowstorage`.
+
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/d3a1b22f-5f69-4b28-a1bf-28002f57cc23" height="80%" width="80%"/>
+</br>
+</br>
+
 - I executed the ransomware again. This time the ransomware was able to complete its attack by resizing the shadowstorage and encrypting files on my Windows VM.
 
 ## Making the Rule More Robust

@@ -77,7 +77,7 @@ rules:
 </br>
 </br>
 
-<img src="https://github.com/emann615/SOC-Lab/assets/117882385/29b2eded-0572-461c-b2c0-f40c35e54760" height="80%" width="80%"/>
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/5777ad42-7f89-41f2-bba9-975978f4afab" height="80%" width="80%"/>
 </br>
 </br>
 

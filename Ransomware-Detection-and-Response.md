@@ -1,5 +1,5 @@
 
-# Ransomware Detection and Response with Lima Charlie
+# Ransomware Detection and Response with LimaCharlie
 
 ## Desciption
 
@@ -13,7 +13,7 @@ In this lab, I ran through scenarios using Lima Charlie D&R rules to stop ransom
 
 ## Languages and Utilities Used
 
-* **Lima Charlie** 
+* **LimaCharlie** 
 
 ## Environments Used
 
@@ -28,11 +28,11 @@ I followed [Eric Stubacks’s SOC lab guide](https://blog.ecapuano.com/p/so-you-
 - Install Sysmon on victim machine.
 - Install Sliver Server on the attacker machine.
 - Create and deliver malicious payload to victim machine.
-- Create a Lima Charlie account and install a sensor on the victim machine.
-- Create my first detection and response rule in Lima Charlie to stop malicious activity.
+- Create a LimaCharlie account and install a sensor on the victim machine.
+- Create my first detection and response rule in LimaCharlie to stop malicious activity.
 
 ### Preventing ransomware attack
-- I created a rule named **vss_deletion_kill_it** to prevent ransomware that uses the `vssadmin delete shadows /all`.
+- I created a D&R rule in LimaCharlie named **vss_deletion_kill_it** to prevent ransomware that uses the `vssadmin delete shadows /all`.
     - Vssadmin is a default Windows process that controls volume shadow duplicates of the documents on a given PC. These shadow copies are regularly utilized as a recovery point, and they can be utilized to reestablish or return the file to a past state if they are destroyed or lost due to some reasons. Ransomware programs use this process to prevent victims from being able to recover their files.
 -	The rule is as follows:
 #### Detect

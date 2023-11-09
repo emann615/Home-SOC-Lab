@@ -59,7 +59,7 @@ rules:
     - deny_tree
     - <<routing/parent>>
 ```
-- The rule is good for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
+- The rule works for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
 - To test this out I downloaded a [ransomware simulator](https://github.com/NextronSystems/ransomware-simulator). It uses the command `vssadmin delete shadows /for=norealvolume /all /quiet` to delete shadow copies. The tool runs the following actions:
     - Copies itself to WORD.exe
     - Spawns the new WORD.exe to simulate a macro-enabled document execution

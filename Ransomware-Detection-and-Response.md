@@ -1,5 +1,5 @@
-
-I followed Eric Stubacks’s SOC lab guide to:
+## Setup
+I followed [Eric Stubacks’s SOC lab guide](https://blog.ecapuano.com/p/so-you-want-to-be-a-soc-analyst-intro) to:
 - Create an attacker VM (Ubuntu) & victim VM (Windows).
 - Disable Windows Defender on the victim machine.
 - Install Sysmon on victim machine.

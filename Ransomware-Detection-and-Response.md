@@ -1,5 +1,5 @@
 
-# Ransomeware Detection and Response with Lima Charlie
+# Ransomware Detection and Response with Lima Charlie
 
 ## Desciption
 

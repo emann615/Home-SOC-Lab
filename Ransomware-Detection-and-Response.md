@@ -49,7 +49,7 @@ rules:
 </br>
 </br>
 
-- When I checked the Detections tab in Lima Charlie, I could also see that my rule was not triggered.
+- When I checked the Detections tab in Lima Charlie, I could also see that the **vss_deletion_kill_it** rule was not triggered.
 
 <img src="https://github.com/emann615/SOC-Lab/assets/117882385/b080d571-0819-402a-83a2-65ddb842dea1" height="100%" width="100%"/>
 </br>
@@ -76,7 +76,7 @@ rules:
     value: '/all'
 ```
 - This rule will trigger for any command that include the values “vssadmin”, “delete”, “shadows” and “/all”.
-- When I ran the ransomware executable again, I could see that the rule was triggered in Lima Charlie and the attack was stopped.
+- When I ran the ransomware executable again, I could see that the **vss_deletion_kill_it** rule was triggered in Lima Charlie and the attack was stopped.
 
 <img src="https://github.com/emann615/SOC-Lab/assets/117882385/e8dee409-7336-4673-8a9d-f104b06b38c3" height="100%" width="100%"/>
 </br>
@@ -94,6 +94,10 @@ rules:
 </br>
 
 - I executed the ransomware again. This time the ransomware was able to complete its attack by resizing the shadowstorage and encrypting files on my Windows VM.
+
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/c965c8ed-a38c-46b9-8517-b869dcf992ef" height="80%" width="80%"/>
+</br>
+</br>
 
 ## Making the Rule More Robust
 - I wanted to see if I could make my rule robust to trigger for multiple different methods that could be used by ransomware to delete shadow copies.

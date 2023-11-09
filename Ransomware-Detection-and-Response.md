@@ -148,10 +148,10 @@ rules:
 </br>
 </br>
 
-<img src="https://github.com/emann615/SOC-Lab/assets/117882385/c490e85f-42c5-4005-9dac-38b3e20ae5dd" height="80%" width="80%"/>
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/c490e85f-42c5-4005-9dac-38b3e20ae5dd" height="100%" width="100%"/>
 </br>
 </br>
 
-<img src="https://github.com/emann615/SOC-Lab/assets/117882385/a94a441f-289a-474e-8fbd-67b93942764e" height="80%" width="80%"/>
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/a94a441f-289a-474e-8fbd-67b93942764e" height="60%" width="60%"/>
 </br>
 </br>

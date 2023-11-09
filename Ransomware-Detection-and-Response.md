@@ -9,7 +9,7 @@ I followed Eric Stubacks’s SOC lab guide to:
 - Create my first detection and response rule to stop malicious activity.
 
 ## Preventing ransomware attack
-- The first rule I created was to prevent ransomware that uses the `vssadmin delete shadows /all`
+- The first I created a rule named **vss_deletion_kill_it** to prevent ransomware that uses the `vssadmin delete shadows /all`
     - Vssadmin is a default Windows process that controls volume shadow duplicates of the documents on a given PC. These shadow copies are regularly utilized as a recovery point, and they can be utilized to reestablish or return the file to a past state if they are destroyed or lost due to some reasons. Ransomware programs use this process to prevent victims from being able to recover their files.
 -	The rule is as follows:
 #### Detect
@@ -39,7 +39,16 @@ rules:
 - The rule is good for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
 - To test this out I downloaded a [ransomware simulator](https://github.com/NextronSystems/ransomware-simulator). It uses the command `vssadmin delete shadows /for=norealvolume /all /quiet` to delete shadow copies.
 - When I ran the ransomware executable, I could see that it was allowed to complete and encrypt my files.
+
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/8eeff114-965c-4098-b76e-c074a6802590" height="80%" width="80%"/>
+</br>
+</br>
+
 - When I checked the Detections tab in Lima Charlie, I could also see that my rule was not triggered.
+
+<img src="https://github.com/emann615/SOC-Lab/assets/117882385/b080d571-0819-402a-83a2-65ddb842dea1" height="80%" width="80%"/>
+</br>
+</br>
 
 ## Using the Contains Operator
 -	I modified the detect part of the rule to use the contains operator.
@@ -111,3 +120,8 @@ rules:
 ```
   
 -	I ran the ransomware executable again and my rule was successfully triggered stopping the attack.
+
+<img src="" height="80%" width="80%"/>
+</br>
+</br>
+

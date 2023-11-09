@@ -37,7 +37,12 @@ rules:
     - <<routing/parent>>
 ```
 - The rule is good for stopping ransomware that uses the exact command but will not stop any ransomware that has modified the command even slightly.
-- To test this out I downloaded a [ransomware simulator](https://github.com/NextronSystems/ransomware-simulator). It uses the command `vssadmin delete shadows /for=norealvolume /all /quiet` to delete shadow copies.
+- To test this out I downloaded a [ransomware simulator](https://github.com/NextronSystems/ransomware-simulator). It uses the command `vssadmin delete shadows /for=norealvolume /all /quiet` to delete shadow copies. The tool runs the following actions:
+    - Copies itself to WORD.exe
+    - Spawns the new WORD.exe to simulate a macro-enabled document execution
+    - Deletes volume shadow copies (this is where we catch and kill it!)
+    - Creates 10,000 files
+    - Encrypts 10,000 files
 - When I ran the ransomware executable, I could see that it was allowed to complete and encrypt my files.
 
 <img src="https://github.com/emann615/SOC-Lab/assets/117882385/8eeff114-965c-4098-b76e-c074a6802590" height="80%" width="80%"/>
